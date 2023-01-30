@@ -1,1 +1,24 @@
-console.log("Deu boa!");
+import express from "express"
+import config from "config"
+
+const app = express();
+
+// JSON middleware
+app.use(express.json());
+
+// Routes
+import router from "./router"
+
+app.use("/api/", router);
+
+// APP port
+const port = config.get<number>("port");
+
+app.listen(port, async () => {
+    console.log(`Aplicação está funcionando na porta: ${port}`);
+});
+
+
+// mongodb atlas
+// evandro-anholeto
+// qC3iwxhCMoZ9keEW
