@@ -1,4 +1,5 @@
 export default {
     port: 3000,
-    dbUri: "mongodb+srv://evandro-anholeto:qC3iwxhCMoZ9keEW@cluster0.rleerrp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    dbURI: `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0.rleerrp.mongodb.net/curso_udemy_typescript_matheusbattisti?retryWrites=true&w=majority`,
+    env: "development",
 };
