@@ -12,6 +12,11 @@ app.use(express.json());
 // MongoDB
 import db from "../config/db";
 
+// Middlewares
+import morganMiddleware from "./middleware/morganMiddleware";
+
+app.use(morganMiddleware);
+
 // Routes
 import router from "./router";
 
@@ -25,7 +30,7 @@ const port = config.get<number>("port");
 
 app.listen(port, async () => {
     Logger.info("app.listen");
-    
+
     await db();
 
     Logger.info(`Aplicação está funcionando na porta: ${port}`);
